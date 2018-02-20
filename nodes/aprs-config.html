@@ -1,0 +1,18 @@
+<script type="text/javascript">
+    RED.nodes.registerType('aprsfi-config',{
+        category: 'config',
+        defaults: {    
+            apiKEY: {value:"",required:true},  
+        },
+        label: function() {
+            return this.apiKEY;
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="aprsfi-config">
+    <div class="form-row">
+        <label for="node-config-input-apiKEY"><i class="icon-bookmark"></i> API KEY</label>
+        <input type="text" id="node-config-input-apiKEY">
+    </div>
+</script>
