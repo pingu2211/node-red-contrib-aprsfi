@@ -22,10 +22,16 @@ module.exports = function(RED) {
 
         node.creds = RED.nodes.getNode(n.creds);
 
-        var CALL=n.call;
-        var WHAT=n.what;
-        var APIKEY=node.creds.apiKEY;
         node.on('input',function(msg){
+
+            if (!msg.call && !n.call || !msg.what&&!n.what){
+                node.status({fill:"red",shape:"ring",text:"you missed something, try again"});
+            }
+
+            var CALL=msg.call||n.call;
+            var WHAT=msg.what||n.what;
+            var APIKEY=node.creds.apiKEY;
+
             var request;
             if (WHAT!=="msg"){
                 request="https://api.aprs.fi/api/get?name="+CALL+"&what="+WHAT+"&apikey="+APIKEY+"&format=json"
