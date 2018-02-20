@@ -64,7 +64,7 @@ module.exports = function(RED) {
                 responce.on('end', () => {
                   try {
                     const parsedData = JSON.parse(rawData);
-                    msg.payload=parsedData.entries;
+                    msg.payload=parsedData;
                     node.send(msg);
                   } catch (e) {
                     console.error(e.message);
