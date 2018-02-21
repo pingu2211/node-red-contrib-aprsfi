@@ -16,7 +16,7 @@ This node provides a wrapper for the api however it is left to the user to compl
 
 ## Input Message
 msg.what must be a string containing the type of request, the options are 'loc', 'msg', or 'wx'
-msg.call should be 1 or more comma sepperated call signs/ station id's i.e "vk2bha,vk2bha-1,vk2jma-9"
+msg.call should be 1 or more comma sepperated call signs/ station id's i.e "vk2bha,vk2bha-1,VK2BTW-6"
 ## Output Message
 
 msg.payload will be discarded and replaced with the passed JSON string reply from aprs.fi
